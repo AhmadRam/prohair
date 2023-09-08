@@ -59,7 +59,8 @@
                             </div>
                             <h3>{{ $product->name }}</h3>
                             <p class="product-price"><span>{{ $product->short_description }}</span></p>
-                            <a href="{{ route('shop.product', $product->url_path) }}" class="cart-btn">{{ __('app.more-details') }}</a>
+                            <a href="{{ route('shop.product', $product->url_path) }}"
+                                class="cart-btn">{{ __('app.more-details') }}</a>
                         </div>
                     </div>
                 @endforeach
@@ -97,54 +98,55 @@
         </div>
     </div>
     <!-- end logo carousel --> --}}
+    @if ($blogs->count())
+        <!-- latest news -->
+        <div class="logo-carousel-section">
+            <div class="container">
 
-    <!-- latest news -->
-    <div class="logo-carousel-section">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="section-title">
-                        <h3>{{ __('app.home.recently-news') }}</h3>
-                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                            beatae optio.</p> --}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : '' }}">
-                @foreach ($news as $single_news)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-latest-news" style="text-align: {{ app()->getLocale() == 'ar' ? 'right' : '' }}">
-                            <a href="{{ route('shop.single-news', $single_news->id) }}">
-                                <div class="latest-news-bg news-bg-1"></div>
-                            </a>
-                            <div class="news-text-box">
-                                <h3><a
-                                        href="{{ route('shop.single-news', $single_news->id) }}">{{ $single_news->title }}</a>
-                                </h3>
-                                <p class="blog-meta">
-                                    {{-- <span class="author"><i class="fas fa-user"></i> Admin</span> --}}
-                                    <span class="date"><i class="fas fa-calendar"></i>
-                                        {{ $single_news->created_at->format('d F, Y') }}</span>
-                                </p>
-                                <p class="excerpt">{{ $single_news->short_description }}</p>
-                                <a href="{{ route('shop.single-news', $single_news->id) }}" class="read-more-btn">{{ __('app.read-more') }}
-                                    <i class="fas fa-angle-{{ app()->getLocale() == 'ar' ? 'left' : 'right' }}"></i></a>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="section-title">
+                            <h3>{{ __('app.home.recently-blogs') }}</h3>
                         </div>
                     </div>
-                @endforeach
+                </div>
 
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a href="{{ route('shop.news') }}" class="boxed-btn">{{ __('app.home.more-news') }}</a>
+                <div class="row" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : '' }}">
+                    @foreach ($blogs as $blog)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-latest-news"
+                                style="text-align: {{ app()->getLocale() == 'ar' ? 'right' : '' }}">
+                                <a href="{{ route('shop.blog', $blog->id) }}">
+                                    <div class="latest-news-bg"
+                                        style="background-image: url('{{ Voyager::image($blog->image) }}');"></div>
+                                </a>
+                                <div class="news-text-box">
+                                    <h3><a href="{{ route('shop.blog', $blog->id) }}">{{ $blog->title }}</a>
+                                    </h3>
+                                    <p class="blog-meta">
+                                        <span class="date"><i class="fas fa-calendar"></i>
+                                            {{ $blog->created_at->format('d F, Y') }}</span>
+                                    </p>
+                                    <p class="excerpt">{{ $blog->short_description }}</p>
+                                    <a href="{{ route('shop.blog', $blog->id) }}"
+                                        class="read-more-btn">{{ __('app.read-more') }}
+                                        <i
+                                            class="fas fa-angle-{{ app()->getLocale() == 'ar' ? 'left' : 'right' }}"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <a href="{{ route('shop.blogs') }}" class="boxed-btn">{{ __('app.home.more-blogs') }}</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end latest news -->
+        <!-- end latest news -->
+    @endif
 
 
 @endsection

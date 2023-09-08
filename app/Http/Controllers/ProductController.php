@@ -13,6 +13,18 @@ class ProductController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     /**
+     * Loads the home page for the storefront.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index()
+    {
+        $products = Product::where(['status' => 'ACTIVE'])->paginate();
+
+        return view('pages.products', compact('products'));
+    }
+
+    /**
      * To extract the page content and load it in the respective view file
      *
      * @param  string  $url_path

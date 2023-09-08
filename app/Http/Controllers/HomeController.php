@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\News;
 use App\Models\Product;
 use App\Models\Slider;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Artisan;
 
 class HomeController extends BaseController
 {
@@ -25,12 +27,12 @@ class HomeController extends BaseController
 
         $products = Product::where(['status' => 'ACTIVE'])->get();
 
-        $count = $products->count() < 6 ? $products->count() : 6;
+        $count = $products->count() < 9 ? $products->count() : 9;
         $products = $products->random($count);
 
-        $news = News::orderby('id', 'ASC')->limit(3)->get();
+        $blogs = Blog::orderby('id', 'ASC')->limit(3)->get();
 
-        return view('pages.index', compact('sliders', 'products', 'news'));
+        return view('pages.index', compact('sliders', 'products', 'blogs'));
     }
 
     /**

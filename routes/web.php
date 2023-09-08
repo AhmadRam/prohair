@@ -28,6 +28,8 @@ Route::group(['middleware' => ['language']], function () {
 
     Route::get('product/{url_path}', [ProductController::class, 'view'])->name('shop.product');
 
+    Route::get('products', [ProductController::class, 'index'])->name('shop.products');
+
     Route::get('category/{url_path}', [CategoryController::class, 'view'])->name('shop.category');
 
     Route::get('news', [NewsController::class, 'index'])->name('shop.news');

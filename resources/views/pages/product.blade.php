@@ -4,6 +4,12 @@
     {{ $product->name }}
 @stop
 
+@section('seo')
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit($product->short_description, 120, '') }}" />
+    <meta name="keywords" content="{{ $product->name }}" />
+    <meta name="robots" content="index, follow">
+@stop
+
 @section('content')
     <!-- breadcrumb-section -->
     <div class="breadcrumb-section" style="padding: 50px">
@@ -16,7 +22,33 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="single-product-img">
-                        <img src="{{ Voyager::image(json_decode($product->images)[0] ?? null) }}" alt="">
+                        <div id="imageSlider" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                @foreach (json_decode($product->images) as $key => $image)
+                                    <li data-target="#imageSlider" data-slide-to="{{ $key }}"
+                                        class="{{ $loop->first ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+                            <div class="carousel-inner">
+                                @foreach (json_decode($product->images) as $key => $image)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <img src="{{ Voyager::image($image) }}" class="d-block w-100"
+                                            alt="Slide {{ $key }}">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <a class="carousel-control-prev" href="#imageSlider" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#imageSlider" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+                        {{-- <img src="{{ Voyager::image(json_decode($product->images)[0] ?? null) }}" alt=""> --}}
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -31,14 +63,18 @@
                                 <input type="number" placeholder="0">
                             </form>
                             <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a> --}}
+                            <p><strong>{{ __('app.product.active-ingredients') }}:
+                                </strong>{{ $product->active_ingredients }}</p>
                             <p><strong>{{ __('app.product.how-to-use') }}: </strong>{{ $product->how_to_use }}</p>
                         </div>
                         <h4>{{ __('app.product.share') }}:</h4>
                         <ul class="product-share">
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->url() }}"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/intent/tweet?url={{ request()->url() }}"><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://wa.me/?text=check out this product on ProHair! {{ request()->url() }}"><i
+                                        class="fab fa-whatsapp"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,7 +105,8 @@
                             </div>
                             <h3>{{ $related_product->name }}</h3>
                             <p class="product-price"><span>{{ $related_product->short_description }}</span></p>
-                            <a href="{{ route('shop.product', $related_product->url_path) }}" class="cart-btn">{{__('app.more-details')}}</a>
+                            <a href="{{ route('shop.product', $related_product->url_path) }}"
+                                class="cart-btn">{{ __('app.more-details') }}</a>
                         </div>
                     </div>
                 @endforeach

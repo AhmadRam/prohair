@@ -4,6 +4,12 @@
     {{ $blog->title }}
 @stop
 
+@section('seo')
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit($blog->short_description, 120, '') }}" />
+    <meta name="keywords" content="{{ $blog->title }}" />
+    <meta name="robots" content="index, follow">
+@stop
+
 @section('content')
 
     <!-- breadcrumb-section -->

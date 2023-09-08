@@ -25,7 +25,9 @@
                         <ul>
                             <li><a style="text-align: start"
                                     href="{{ route('shop.index') }}">{{ __('app.header.home') }}</a></li>
-                            <li><a style="text-align: start" href="#">{{ __('app.header.categories') }}</a>
+                            <li><a style="text-align: start"
+                                    href="{{ route('shop.products') }}">{{ __('app.header.products') }}</a></li>
+                            {{-- <li><a style="text-align: start" href="#">{{ __('app.header.categories') }}</a>
                                 <ul class="sub-menu" style="right:{{ app()->getLocale() == 'ar' ? '10px' : '' }};">
                                     @foreach (App\Models\Category::all() as $category)
                                         <li style="text-align:{{ app()->getLocale() == 'ar' ? 'right' : '' }};"><a
@@ -34,9 +36,9 @@
                                         </li>
                                     @endforeach
                                 </ul>
-                            </li>
-                            <li><a style="text-align: start"
-                                    href="{{ route('shop.news') }}">{{ __('app.header.news') }}</a></li>
+                            </li> --}}
+                            {{-- <li><a style="text-align: start"
+                                    href="{{ route('shop.news') }}">{{ __('app.header.news') }}</a></li> --}}
                             <li><a style="text-align: start"
                                     href="{{ route('shop.blogs') }}">{{ __('app.header.blogs') }}</a></li>
                             <li><a style="text-align: start"
@@ -58,7 +60,7 @@
                             <li style="float:{{ app()->getLocale() == 'ar' ? 'left' : 'right' }}">
                                 <div class="header-icons">
                                     {{-- <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a> --}}
-                                    <a class="mobile-hide search-bar-icon" href="#" ><i
+                                    <a class="mobile-hide search-bar-icon" href="#"><i
                                             class="fas fa-search"></i></a>
                                 </div>
                             </li>

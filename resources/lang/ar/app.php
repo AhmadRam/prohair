@@ -9,6 +9,7 @@ return [
     'header' => [
         'home' => 'الصفحة الرئيسية',
         'categories' => 'التصنيفات',
+        'products' => 'المنتجات',
         'news' => 'الأخبار',
         'blogs' => 'المدونات',
         'about-us' => 'معلومات عنا',
@@ -21,13 +22,16 @@ return [
     'home' => [
         'recently-products' => 'منتجات حديثة',
         'recently-news' => 'أخبار حديثة',
+        'recently-blogs' => 'مدونات حديثة',
         'more-news' => 'المزيد من الأخبار',
+        'more-blogs' => 'المزيد من المدونات',
     ],
 
     'product' => [
         'how-to-use' => 'كيفية الاستخدام',
         'share' => 'مشاركة',
         'related-products' => 'منتجات ذات صلة',
+        'active-ingredients' => 'أهم المكونات',
     ],
 
     'blogs' => 'المدونات',

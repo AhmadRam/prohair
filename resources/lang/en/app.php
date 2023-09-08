@@ -10,6 +10,7 @@ return [
     'header' => [
         'home' => 'Home',
         'categories' => 'Categories',
+        'products' => 'Products',
         'news' => 'News',
         'blogs' => 'Blogs',
         'about-us' => 'About us',
@@ -22,13 +23,16 @@ return [
     'home' => [
         'recently-products' => 'Recently Products',
         'recently-news' => 'Recently News',
+        'recently-blogs' => 'Recently Blogs',
         'more-news' => 'More News',
+        'more-blogs' => 'More Blogs',
     ],
 
     'product' => [
         'how-to-use' => 'How to use',
         'share' => 'Share',
         'related-products' => 'Related Products',
+        'active-ingredients' => 'Active ingredients',
     ],
 
     'blogs' => 'Blogs',

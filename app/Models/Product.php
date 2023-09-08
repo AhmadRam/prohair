@@ -35,7 +35,7 @@ class Product extends Model
      */
     public function getAttribute($key)
     {
-        if (in_array($key, ['name', 'description', 'short_description', 'how_to_use'])) {
+        if (in_array($key, ['name', 'description', 'short_description', 'how_to_use','active_ingredients'])) {
             $locale = app()->getLocale();
             $this->attributes[$key] = $this->{$key . '_' . $locale};
             return $this->getAttributeValue($key);
