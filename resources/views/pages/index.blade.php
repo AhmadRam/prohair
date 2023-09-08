@@ -6,32 +6,51 @@
 
 @section('content')
     <!-- home page slider -->
-    <div class="homepage-slider">
-        @foreach ($sliders as $slider)
-            {{-- {{ dd($slider->image) }} --}}
-            <!-- single home slider -->
-            <div class="single-homepage-slider" style="background-image: url('{{ Voyager::image($slider->image) }}');">
-                <div class="container">
-                    <div class="row">
-                        <div class="{{ $slider->text_align }}">
-                            <div class="hero-text">
-                                <div class="hero-text-tablecell">
-                                    <p class="subtitle">{{ $slider->title }}</p>
-                                    <h1>{{ $slider->short_description }}</h1>
-                                    <div class="hero-btns">
-                                        {{-- <a href="shop.html" class="boxed-btn">Fruit Collection</a> --}}
-                                        {{-- <a href="{{ route('shop.page', 'contact-us') }}" class="bordered-btn">Contact Us</a> --}}
-                                    </div>
+    @if ($sliders->count() == 1)
+        <div class="hero-area  hero-bg" style="background-image: url('{{ Voyager::image($sliders->first()->image) }}');">
+            <div class="container">
+                <div class="row">
+                    <div class="{{ $sliders->first()->text_align }}">
+                        <div class="hero-text">
+                            <div class="hero-text-tablecell">
+                                <p class="subtitle">{{ $sliders->first()->title }}</p>
+                                <h1>{{ $sliders->first()->short_description }}</h1>
+                                <div class="hero-btns">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- single home slider -->
-        @endforeach
+        </div>
+    @else
+        <div class="homepage-slider">
+            @foreach ($sliders as $slider)
+                {{-- {{ dd($slider->image) }} --}}
+                <!-- single home slider -->
+                <div class="single-homepage-slider" style="background-image: url('{{ Voyager::image($slider->image) }}');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="{{ $slider->text_align }}">
+                                <div class="hero-text">
+                                    <div class="hero-text-tablecell">
+                                        <p class="subtitle">{{ $slider->title }}</p>
+                                        <h1>{{ $slider->short_description }}</h1>
+                                        <div class="hero-btns">
+                                            {{-- <a href="shop.html" class="boxed-btn">Fruit Collection</a> --}}
+                                            {{-- <a href="{{ route('shop.page', 'contact-us') }}" class="bordered-btn">Contact Us</a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single home slider -->
+            @endforeach
 
-    </div>
+        </div>
+    @endif
     <!-- end home page slider -->
 
 
