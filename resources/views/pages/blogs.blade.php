@@ -51,7 +51,7 @@
                 @endforeach
             </div>
 
-            @include('pages.paginate', ['paginate' => $blogs]);
+            @include('pages.paginate', ['paginate' => $blogs])
 
         </div>
     </div>

@@ -32,7 +32,7 @@
                 @endforeach
             </div>
 
-            @include('pages.paginate', ['paginate' => $products]);
+            @include('pages.paginate', ['paginate' => $products])
 
         </div>
     </div>
