@@ -32,6 +32,8 @@ return [
         'share' => 'مشاركة',
         'related-products' => 'منتجات ذات صلة',
         'active-ingredients' => 'أهم المكونات',
+        'note' => 'ملاحظة',
+        'benefits' => 'الفوائد',
     ],
 
     'blogs' => 'المدونات',

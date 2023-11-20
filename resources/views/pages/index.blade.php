@@ -70,16 +70,23 @@
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
+                        <div class="single-product-item" style="min-height: 810px; display: flex; flex-direction: column;">
                             <div class="product-image">
-                                <a href="{{ route('shop.product', $product->url_path) }}"><img
-                                        src="{{ Voyager::image(json_decode($product->images)[0] ?? null) }}"
-                                        alt="{{ $product->name }}"></a>
+                                <a href="{{ route('shop.product', $product->url_path) }}">
+                                    <img src="{{ Voyager::image(json_decode($product->images)[0] ?? null) }}"
+                                        alt="{{ $product->name }}">
+                                </a>
                             </div>
-                            <h3>{{ $product->name }}</h3>
-                            <p class="product-price"><span>{{ $product->short_description }}</span></p>
-                            <a href="{{ route('shop.product', $product->url_path) }}"
-                                class="cart-btn">{{ __('app.more-details') }}</a>
+                            <div style="padding:20px">
+                                <h5>{{ $product->name }}</h5>
+                                <p class="product-price">
+                                    <span style="font-size: 12px;">{{ $product->short_description }}</span>
+                                </p>
+                            </div>
+                            <div style="margin-top: auto;">
+                                <a href="{{ route('shop.product', $product->url_path) }}"
+                                    class="cart-btn">{{ __('app.more-details') }}</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach

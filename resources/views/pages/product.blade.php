@@ -53,9 +53,10 @@
                 </div>
                 <div class="col-md-7">
                     <div class="single-product-content" style="text-align: {{ app()->getLocale() == 'ar' ? 'right' : '' }}">
-                        <h3>{{ $product->name }}</h3>
-                        <p class="single-product-pricing"><span>{{ $product->short_description }}</span></p>
+                        <h5>{{ $product->name }}</h5>
+                        {{-- <p><span>{{ $product->short_description }}</span></p> --}}
                         <p>{!! $product->description !!}</p>
+
                         <hr>
 
                         <div class="single-product-form">
@@ -66,7 +67,21 @@
                             <p><strong>{{ __('app.product.active-ingredients') }}:
                                 </strong>{{ $product->active_ingredients }}</p>
                             <p><strong>{{ __('app.product.how-to-use') }}: </strong>{{ $product->how_to_use }}</p>
+
                         </div>
+
+                        <hr>
+
+                        <div class="single-product-form">
+                            <p style="margin-bottom: 0px;">
+                                <strong>{{ __('app.product.note') }}:</strong><br>{!! $product->note !!}
+                            </p>
+                            <p style="margin-bottom: 0px;">
+                                <strong>{{ __('app.product.benefits') }}:</strong><br>{!! $product->benefits !!}</p>
+                        </div>
+
+                        <hr>
+                        
                         <h4>{{ __('app.product.share') }}:</h4>
                         <ul class="product-share">
                             <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->url() }}"><i
@@ -97,16 +112,19 @@
             <div class="row">
                 @foreach ($product->related_products()->take(6)->get() as $related_product)
                     <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
+                        <div class="single-product-item" style="min-height: 850px;">
                             <div class="product-image">
                                 <a href="{{ route('shop.product', $related_product->url_path) }}"><img
                                         src="{{ Voyager::image(json_decode($related_product->images)[0] ?? null) }}"
                                         alt="{{ $related_product->name }}"></a>
                             </div>
-                            <h3>{{ $related_product->name }}</h3>
-                            <p class="product-price"><span>{{ $related_product->short_description }}</span></p>
-                            <a href="{{ route('shop.product', $related_product->url_path) }}"
-                                class="cart-btn">{{ __('app.more-details') }}</a>
+                            <div style="padding:20px">
+                                <h3>{{ $related_product->name }}</h3>
+                                <p class="product-price"><span
+                                        style="font-size: 12px;">{{ $related_product->short_description }}</span></p>
+                                <a href="{{ route('shop.product', $related_product->url_path) }}"
+                                    class="cart-btn">{{ __('app.more-details') }}</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
