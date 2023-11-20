@@ -174,5 +174,20 @@
         <!-- end latest news -->
     @endif
 
+    <div class="product-section mt-150 mb-150">
+        <div style="margin: 50px">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <img src="{{ asset('assets/img/banner1.jpg') }}" alt="">
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <img src="{{ asset('assets/img/banner2.jpg') }}" alt="">
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <img src="{{ asset('assets/img/banner3.jpg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
