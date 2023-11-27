@@ -74,7 +74,8 @@
 
                         <div class="single-product-form">
                             <p style="margin-bottom: 0px;">
-                                <strong>{{ __('app.product.note') }}:</strong><br>{!! $product->note !!}
+                                {{-- <strong>{{ __('app.product.note') }}:</strong> --}}
+                                <br>{!! $product->note !!}
                             </p>
                             <p style="margin-bottom: 0px;">
                                 <strong>{{ __('app.product.benefits') }}:</strong><br>{!! $product->benefits !!}</p>
