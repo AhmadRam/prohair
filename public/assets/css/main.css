@@ -761,6 +761,11 @@ nav.main-menu li a {
   top: 0;
   width: 100%;
   z-index: 999 !important;
+  background-color: #051922;
+  padding: 15px 0;
+  position: fixed;
+  top: 0px;
+  z-index: inherit;
 }
 
 .sticky-wrapper.is-sticky .top-header-area {
@@ -1432,7 +1437,8 @@ a.mobile-show.search-bar-icon:hover {
   background-image: url(../img/hero-bg.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
+  margin-top: 7%;
 }
 
 .hero-text {
@@ -1447,7 +1453,7 @@ a.mobile-show.search-bar-icon:hover {
 .hero-area {
   height: 100%;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 html,
