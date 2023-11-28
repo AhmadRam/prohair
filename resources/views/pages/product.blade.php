@@ -74,15 +74,15 @@
 
                         <div class="single-product-form">
                             <p style="margin-bottom: 0px;">
-                                {{-- <strong>{{ __('app.product.note') }}:</strong> --}}
-                                <br>{!! $product->note !!}
+                                <strong>{{ __('app.product.key-features') }}:</strong><br>{!! $product->key_features !!}
                             </p>
                             <p style="margin-bottom: 0px;">
-                                <strong>{{ __('app.product.benefits') }}:</strong><br>{!! $product->benefits !!}</p>
+                                <strong>{{ __('app.product.benefits') }}:</strong><br>{!! $product->benefits !!}
+                            </p>
                         </div>
 
                         <hr>
-                        
+
                         <h4>{{ __('app.product.share') }}:</h4>
                         <ul class="product-share">
                             <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->url() }}"><i

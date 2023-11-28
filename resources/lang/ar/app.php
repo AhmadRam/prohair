@@ -32,7 +32,7 @@ return [
         'share' => 'مشاركة',
         'related-products' => 'منتجات ذات صلة',
         'active-ingredients' => 'أهم المكونات',
-        'note' => 'ملاحظة',
+        'key-features' => 'دلائل الميزات',
         'benefits' => 'الفوائد',
     ],
 

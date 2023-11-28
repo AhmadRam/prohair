@@ -33,7 +33,7 @@ return [
         'share' => 'Share',
         'related-products' => 'Related Products',
         'active-ingredients' => 'Active ingredients',
-        'note' => 'Note',
+        'key-features' => 'Key Features',
         'benefits' => 'Benefits',
     ],
 
