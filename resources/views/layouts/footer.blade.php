@@ -34,7 +34,9 @@
                     <ul>
                         <li>{{ setting('site.address') }}</li>
                         <li><a href="mailto:{{ setting('site.email') }}">{{ setting('site.email') }}</a></li>
-                        <li><a href="tel:{{ setting('site.phone') }}">{{ setting('site.phone') }}</a></li>
+                        @if (setting('site.phone') != '')
+                            <li><a href="tel:{{ setting('site.phone') }}">{{ setting('site.phone') }}</a></li>
+                        @endif
                     </ul>
 
                 </div>
@@ -42,8 +44,10 @@
                     <ul>
                         {{-- <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li> --}}
                         {{-- <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li> --}}
-                        <li><a href="https://www.instagram.com/prohair_formula/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/company/prohair-nutritious-formula/about/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://www.instagram.com/prohair_formula/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/prohair-nutritious-formula/about/"
+                                target="_blank"><i class="fab fa-linkedin"></i></a></li>
                         {{-- <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li> --}}
                     </ul>
                 </div>
