@@ -40,11 +40,11 @@
                 </div>
                 <div class="social-icons" style="text-align: center">
                     <ul>
-                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                        {{-- <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li> --}}
+                        {{-- <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li> --}}
+                        <li><a href="https://www.instagram.com/prohair_formula/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/prohair-nutritious-formula/about/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        {{-- <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li> --}}
                     </ul>
                 </div>
             </div>
