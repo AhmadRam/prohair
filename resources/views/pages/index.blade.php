@@ -102,19 +102,20 @@
         <div style="margin: 50px">
             <div class="row">
                 <div class="col-lg-4 col-md-10 text-center">
-                    <video width="100%" height="height: 100%" controls autoplay muted>
+                    <video width="100%" height="auto" controls autoplay muted style="width: 100%;height: 100%;">
                         <source src="{{ asset('assets/img/video1.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="col-lg-4 col-md-10 text-center">
-                    <video width="100%" height="height: 100%" controls autoplay muted>
+                    <video width="100%" height="auto" controls autoplay muted
+                        style="width: 100%;height: 100%;">
                         <source src="{{ asset('assets/img/video2.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="col-lg-4 col-md-10 text-center">
-                    <video width="100%" height="height: 100%" controls autoplay muted>
+                    <video width="100%" height="auto" controls autoplay muted style="width: 100%;height: 100%;">
                         <source src="{{ asset('assets/img/video3.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
