@@ -101,20 +101,25 @@
     <div class="product-section mt-150 mb-150">
         <div style="margin: 50px">
             <div class="row">
-                <div class="col-lg-6 col-md-10 text-center">
+                <div class="col-lg-4 col-md-10 text-center">
                     <video width="100%" height="auto" controls autoplay muted>
                         <source src="{{ asset('assets/img/video1.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-
-                <div class="col-lg-6 col-md-10 text-center">
-                    <video width="100%" height="auto" controls autoplay muted
-                        style="margin-top: 15%;">
+                <div class="col-lg-4 col-md-10 text-center">
+                    <video width="100%" height="auto" controls autoplay muted style="margin-top: 15%;">
                         <source src="{{ asset('assets/img/video2.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
+                <div class="col-lg-4 col-md-10 text-center">
+                    <video width="100%" height="auto" controls autoplay muted>
+                        <source src="{{ asset('assets/img/video3.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
             </div>
         </div>
     </div>
