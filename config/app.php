@@ -54,7 +54,7 @@ return [
 
     'url' => env('APP_URL', 'https://prohair.com.tr'),
 
-    'asset_url' => env('ASSET_URL', request()->getSchemeAndHttpHost()),
+    'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------
